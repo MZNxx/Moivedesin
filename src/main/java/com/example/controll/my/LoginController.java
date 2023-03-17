@@ -13,18 +13,14 @@ import javax.annotation.Resource;
 
 @Api(tags = "我的界面")
 @RestController
-@RequestMapping("/logingregist")
+@RequestMapping("/my")
 public class LoginController {
     @Resource
     private SwipperMapper swipperMapper;
-    @ApiOperation("登陆")
-    @GetMapping("/login")
+    @ApiOperation("注册登陆")
+    @GetMapping("/loginorregist")
     public String login(@RequestBody User user){
-        String uname = user.getUsername();
-        String pwd = user.getPassword();
-        if(uname != null && pwd != null){
 
-        }
         return "登陆失败";
     }
 }

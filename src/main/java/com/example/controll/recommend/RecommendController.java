@@ -28,11 +28,11 @@ public class RecommendController {
     @GetMapping("/getrecommend")
     @RequestBody
     public String getrecommend(){
-        List<RecommendList> imageInfos = recommendService.selectAll();
+        List<RecommendList> recommendLists = recommendService.selectAll();
         List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
         Map<String, Object> map = null;
-        for (RecommendList rlist : imageInfos) {
-            map = new HashMap<String, Object>();
+        for (RecommendList rlist : recommendLists) {
+            map = new HashMap<>();
             map.put("rid", rlist.getRid());
             map.put("rno", rlist.getRno());
             map.put("rimg", rlist.getRimg());

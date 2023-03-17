@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableOpenApi
-// @EnableKnife4j
+ @EnableKnife4j
 // @EnableSwagger2
 public class Knife4jConfig {
     @Bean

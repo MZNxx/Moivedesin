@@ -1,16 +1,18 @@
 package com.example.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.models.auth.In;
-import lombok.Data;
+import io.swagger.annotations.ApiModelProperty;
+
 
 @TableName("user")
 public class User {
-    @TableId(value = "uid",type = IdType.AUTO)
+    @TableId("uid")
+    @ApiModelProperty("用户id")
     private Integer uid;
+    @ApiModelProperty("用户名")
     private String username;
+    @ApiModelProperty("密码")
     private String password;
 
     public int getUid() {

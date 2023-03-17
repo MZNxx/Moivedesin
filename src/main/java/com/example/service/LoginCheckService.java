@@ -1,5 +1,7 @@
 package com.example.service;
 
-public interface LoginCheckService {
+import com.example.pojo.User;
 
+public interface LoginCheckService {
+    Boolean checkstatus(User user);
 }
