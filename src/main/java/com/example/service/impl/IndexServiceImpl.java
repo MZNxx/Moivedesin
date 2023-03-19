@@ -3,6 +3,7 @@ package com.example.service.impl;
 import com.example.mapper.index.HotmoviceMapper;
 import com.example.mapper.index.SwipperMapper;
 import com.example.pojo.Hotmovie;
+import com.example.pojo.Swipper;
 import com.example.service.IndexService;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,11 @@ public class IndexServiceImpl implements IndexService {
     @Override
     public List<Hotmovie> selectAll() {
         return hotmoviceMapper.selectList(null);
+    }
+
+    @Override
+    public List<Swipper> selectSwipper() {
+        return swipperMapper.selectList(null);
     }
 
 

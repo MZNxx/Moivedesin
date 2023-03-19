@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.pojo.Hotmovie;
+import com.example.pojo.Swipper;
 
 import java.util.List;
 
@@ -17,4 +18,10 @@ public interface IndexService {
      * 用途：拿到hotmovie中的所有数据
      */
     List<Hotmovie> selectAll();
+
+    /**
+     * 表：swipper
+     * 用途：拿到hotmovie中的所有数据
+     */
+    List<Swipper> selectSwipper();
 }

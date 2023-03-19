@@ -17,4 +17,6 @@ public class Swipper {
     private String simg;
     @ApiModelProperty("轮播图资讯url")
     private String surl;
+    @ApiModelProperty("轮播图关联文章id")
+    private int said;
 }

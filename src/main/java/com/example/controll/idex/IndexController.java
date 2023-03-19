@@ -2,6 +2,7 @@ package com.example.controll.idex;
 
 import com.example.pojo.Hotmovie;
 import com.example.pojo.RecommendList;
+import com.example.pojo.Swipper;
 import com.example.pojo.dto.index.SwipperDTO;
 import com.example.service.IndexService;
 import com.google.gson.Gson;
@@ -25,7 +26,7 @@ public class IndexController {
     private IndexService indexService;
 
     @ApiOperation("获取轮播图url地址")
-    @GetMapping("/getswipper")
+    @GetMapping("/getsurl")
     public List<String> seletByC(){
         SwipperDTO sdto = new SwipperDTO();
         return sdto.setM(indexService.selectByC());
@@ -47,6 +48,28 @@ public class IndexController {
             map.put("mdate", hmovie.getMdate());
             map.put("mcontent", hmovie.getMcontent());
             map.put("articleurl", hmovie.getArticleurl());
+            result.add(map);
+        }
+        Gson gson = new Gson();
+        return gson.toJson(result);
+    }
+
+    /**
+     * 获取轮播图数据
+     */
+    @ApiOperation("获取轮播图数据")
+    @GetMapping("/getswipper")
+    public String getSwipper(){
+        List<Swipper> swippers = indexService.selectSwipper();
+        List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
+        Map<String, Object> map = null;
+        for (Swipper swipper : swippers) {
+            map = new HashMap<>();
+            map.put("sid", swipper.getSid());
+            map.put("simg", swipper.getSimg());
+            map.put("sname", swipper.getSname());
+            map.put("surl", swipper.getSurl());
+            map.put("said", swipper.getSaid());
             result.add(map);
         }
         Gson gson = new Gson();
